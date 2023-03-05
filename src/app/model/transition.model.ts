@@ -2,5 +2,5 @@ export interface TransitionModel {
 
   name: string
 
-  refId: string
+  next: string | 'end'
 }
