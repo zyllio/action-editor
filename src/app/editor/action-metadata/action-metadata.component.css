@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  color: var(--primary-text-color);
+  padding: 4px 4px 4px 27px;
+  width: 180px;
+  height: 32px;
+  box-sizing: border-box;
+  cursor: grab;
+  font-size: 13px;
+  background-image: url('./action.svg');
+  background-size: 24px;
+  background-position: 2px;
+  background-repeat: no-repeat;
+}
+
+:host(:hover) {
+  background-color: var(--theme-primary-05);
+}

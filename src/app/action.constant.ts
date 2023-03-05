@@ -1,4 +1,4 @@
-import { ActionModel } from "./model/action.model";
+import { ActionModel } from "./editor/model/action.model";
 
 export const ActionSample: ActionModel = {
   id: '12',

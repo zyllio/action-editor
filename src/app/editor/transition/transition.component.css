@@ -1,0 +1,6 @@
+:host {
+  position: absolute;
+  color: var(--primary-text-color);
+  box-sizing: border-box;
+  border-top: 9px dotted #cccccc;
+}

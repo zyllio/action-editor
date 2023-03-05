@@ -1,9 +1,47 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  color: var(--primary-text-color);
+  overflow: hidden;
+}
+
+.canvas {
+  overflow: overlay;
+  flex-grow: 1;
+}
+
+.inner-canvas {
   width: 10000px;
   height: 10000px;
   background-color: var(--theme-primary-03);
-  color: var(--primary-text-color);
+  position: relative;
+}
+
+.tools {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  border-right: 1px solid var(--theme-border);
+  background-color: var(--theme-primary-04);
+  gap: 5px;
+  align-items: center;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+app-action {
+  left: 100px;
+  top: 100px;
 }
 
 
+app-decision-point {
+  left: 300px;
+  top: 100px;
+}
+
+app-transition {
+  left: 123px;
+  top: 123px;
+  width: 218px;
+}

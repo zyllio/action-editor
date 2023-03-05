@@ -1,7 +1,7 @@
 import { StepType } from "./step-type.type"
 import { TransitionModel } from "./transition.model"
 
-export type StepModel {
+export interface StepModel {
 
   id: string
 
