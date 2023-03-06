@@ -29,7 +29,7 @@
   box-sizing: border-box;
 }
 
-app-action {
+/* app-action {
   left: 100px;
   top: 100px;
 }
@@ -44,4 +44,4 @@ app-transition {
   left: 123px;
   top: 123px;
   width: 218px;
-}
+} */

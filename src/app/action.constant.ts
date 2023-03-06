@@ -9,7 +9,13 @@ export const ActionSample: ActionModel = {
       type: 'action',
       transitions: [{
         name: 'complete',
-        next: 'end'
+        next: '2'
+      }]
+    }, {
+      id: '2',
+      type: 'action',
+      transitions: [{
+        name: 'complete'
       }]
     }]
   }

@@ -7,11 +7,15 @@
 <div class="canvas">
   <div class="inner-canvas">
 
-    <app-transition></app-transition>
+    <app-transition *ngFor="let transition of transitions"
+      [style.left.px]="transition.fromX * 200 + 100" [style.top.px]="transition.fromY * 200 + 100"
+      [style.width.px]="(transition.toX - transition.fromX) * 200 + 100" [style.height.px]="(transition.toY - transition.fromY) * 200 + 100" ></app-transition>
 
-    <app-action></app-action>
+    <app-action *ngFor="let position of positions" [label]="'Action ' + position.stepId"
+      [style.left.px]="position.x * 200 + 100"
+      [style.top.px]="position.y * 200 + 100" ></app-action>
 
-    <app-decision-point></app-decision-point>
+    <!-- <app-decision-point label="If user is admin"></app-decision-point> -->
 
   </div>
 </div>

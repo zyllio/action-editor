@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-decision-point',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./decision-point.component.css']
 })
 export class DecisionPointComponent {
+
+  @Input() label = ''
 
 }
