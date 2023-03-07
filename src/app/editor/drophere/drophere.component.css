@@ -1,0 +1,36 @@
+:host {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  min-height: 20px;
+}
+
+:host(.show) {
+  opacity: 1;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 27px;
+  border-width: 1px;
+  border-color: #666666;
+  border-style: dashed;
+  border-radius: 12px;
+  box-sizing: border-box;
+  font-size: 12px;
+  text-align: center;
+  background-color: var(--theme-primary-03);
+}
+
+.label.outline {
+  outline: 2px solid var(--theme-secondary-05);
+  outline-offset: -2px;
+  border-radius: 12px;
+}

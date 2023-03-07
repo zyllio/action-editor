@@ -7,6 +7,8 @@ import { ActionComponent } from './editor/action/action.component';
 import { DecisionPointComponent } from './editor/decision-point/decision-point.component';
 import { TransitionComponent } from './editor/transition/transition.component';
 import { ActionMetadataComponent } from './editor/action-metadata/action-metadata.component';
+import { DndCopyDirective } from './editor/dnd-copy.directive';
+import { DrophereComponent } from './editor/drophere/drophere.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ActionMetadataComponent } from './editor/action-metadata/action-metadat
     ActionComponent,
     DecisionPointComponent,
     TransitionComponent,
-    ActionMetadataComponent
+    ActionMetadataComponent,
+    DndCopyDirective,
+    DrophereComponent
   ],
   imports: [
     BrowserModule

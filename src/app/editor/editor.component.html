@@ -1,21 +1,37 @@
 <div class="tools">
-  <app-action-metadata text="Action 1"></app-action-metadata>
-  <app-action-metadata text="Action 2"></app-action-metadata>
-  <app-action-metadata text="Action 3"></app-action-metadata>
+  <app-action-metadata [text]="action" *ngFor="let action of availableActions" app-dnd-copy drop-selector="app-drophere .label"
+    (dropped)="onMovedAction(action, $event)" (dragged)="onDragged()" (cancelled)="onCancelled()"></app-action-metadata>
 </div>
 
 <div class="canvas">
   <div class="inner-canvas">
 
     <app-transition *ngFor="let transition of transitions"
-      [style.left.px]="transition.fromX * 200 + 100" [style.top.px]="transition.fromY * 200 + 100"
-      [style.width.px]="(transition.toX - transition.fromX) * 200 + 100" [style.height.px]="(transition.toY - transition.fromY) * 200 + 100" ></app-transition>
+      [style.left.px]="transition.fromX * CellSize + Margin + IconShift"
+      [style.top.px]="transition.fromY * CellSize + Margin + IconShift"
+      [style.width.px]="(transition.toX - transition.fromX) * CellSize + IconShift"
+      [style.height.px]="(transition.toY - transition.fromY) * CellSize"></app-transition>
 
     <app-action *ngFor="let position of positions" [label]="'Action ' + position.stepId"
-      [style.left.px]="position.x * 200 + 100"
-      [style.top.px]="position.y * 200 + 100" ></app-action>
+      [style.left.px]="position.x * CellSize + Margin" [style.top.px]="position.y * CellSize + Margin"
+
+      app-dnd-copy
+      drop-selector=".placeholder" (dropped)="onMovedAction(action, $event)" (dragged)="onDragged()"
+      (cancelled)="onCancelled()"
+
+
+      ></app-action>
+
+    <app-drophere [class.show]="dragging" tabindex="0" *ngFor="let transition of transitions; let i = index" tabindex="{{i+1}}"
+      [style.left.px]="transition.fromX * CellSize + Margin + IconShift"
+      [style.top.px]="transition.fromY * CellSize + Margin + IconShift"
+      [style.width.px]="(transition.toX - transition.fromX) * CellSize + IconShift"
+      [style.height.px]="(transition.toY - transition.fromY) * CellSize"
+    ></app-drophere>
+
 
     <!-- <app-decision-point label="If user is admin"></app-decision-point> -->
+
 
   </div>
 </div>
